@@ -1,10 +1,11 @@
 package pe.isil.moduloseguridad.aplicacion;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+@Repository
 public interface AplicacionRepository extends JpaRepository<Aplicacion, Long> {
-    Optional<Aplicacion> findByName(String nombre);
-    
+    Optional<Aplicacion> findAplicacionByNombre(String nombre);
 }

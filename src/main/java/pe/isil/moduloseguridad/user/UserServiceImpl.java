@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
                 return BasicResponse.buildWhenEmailIsTaken();
             } else {
                 userRepository.save(user);
-                return BasicResponse.whenSucceed();
+                return BasicResponse.buildWhenSucceed();
             }
         } catch (Exception e) {
             return BasicResponse.buildWhenError(e.getMessage());
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
             userToUpdate.setUrlPhoto(user.getUrlPhoto());
             userRepository.save(userToUpdate);
 
-            return BasicResponse.whenSucceed();
+            return BasicResponse.buildWhenSucceed();
         } catch (Exception e) {
             return BasicResponse.buildWhenError("Correo ya esta en uso");
         }

@@ -13,7 +13,9 @@ public enum Constants {
     CODE_EMAIL_TAKEN("510", "El email ya está registrado"),
     CODE_REGISTER_SUCCESSFULLY("200", "Usuario registrado correctamente"),
     CODE_PASSWORD_RESTORED("200", "Tu contraseña ha sido actualizada"),
-    CODE_NAME_TAKEN("510", "El email ya está registrado");
+    CODE_NAME_TAKEN("510", "El email ya está registrado"),
+    CODE_APP_CREATED("200", "Aplicación creada exitosamente"),
+    CODE_APP_NOMBRE_TAKEN("510", "El nombre de la aplicación ya existe");
 
     @Getter
     private String code;

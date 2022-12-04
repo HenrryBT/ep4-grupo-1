@@ -9,20 +9,19 @@ import java.util.Optional;
 
 @Service
 public class AplicacionServiceImpl implements AplicacionService{
-
     @Autowired
     private AplicacionRepository aplicacionRepository;
 
     @Override
     public BasicResponse createApp(Aplicacion aplicacion) {
         try {
-            Optional<Aplicacion> aplicacionTemp = aplicacionRepository.findByName(aplicacion.getNombre());
+            Optional<Aplicacion> aplicacionTemp = aplicacionRepository.findAplicacionByNombre(aplicacion.getNombre());
 
             if (aplicacionTemp.isPresent()) {
-                return BasicResponse.buildWhenNameIsTaken();
+                return BasicResponse.buildWhenAppNameIsTaken();
             } else {
                 aplicacionRepository.save(aplicacion);
-                return BasicResponse.whenSucceed();
+                return BasicResponse.buildWhenAppCreatedSuccess();
             }
         } catch (Exception e) {
             return BasicResponse.buildWhenError(e.getMessage());
@@ -36,10 +35,10 @@ public class AplicacionServiceImpl implements AplicacionService{
 
             aplicacionToUpdate.setNombre(aplicacion.getNombre());
             aplicacionToUpdate.setBaseDatos(aplicacion.getBaseDatos());
-            aplicacionToUpdate.setLenguage(aplicacion.getLenguage());
+            aplicacionToUpdate.setLenguaje(aplicacion.getLenguaje());
             aplicacionRepository.save(aplicacionToUpdate);
 
-            return BasicResponse.whenSucceed();
+            return BasicResponse.buildWhenSucceed();
         } catch (Exception e) {
             return BasicResponse.buildWhenError("El nombre ya esta en uso");
         }
@@ -60,10 +59,4 @@ public class AplicacionServiceImpl implements AplicacionService{
     public List<Aplicacion> getAllApps() {
         return aplicacionRepository.findAll();
     }
-
-    @Override
-    public Aplicacion getUserByName(String nombre) {
-        return aplicacionRepository.findByName(nombre).get();
-    }
-
 }

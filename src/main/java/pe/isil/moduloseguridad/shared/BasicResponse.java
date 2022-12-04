@@ -19,7 +19,7 @@ public class BasicResponse {
                 .build();
     }
 
-    public static BasicResponse whenSucceed() {
+    public static BasicResponse buildWhenSucceed() {
         return BasicResponse.builder()
                 .code(Constants.CODE_SUCCEED.getCode())
                 .message(Constants.CODE_SUCCEED.getMessage())
@@ -54,13 +54,6 @@ public class BasicResponse {
                 .build();
     }
 
-    public static BasicResponse buildWhenNameIsTaken() {
-        return BasicResponse.builder()
-                .code(Constants.CODE_NAME_TAKEN.getCode())
-                .message(Constants.CODE_NAME_TAKEN.getMessage())
-                .build();
-    }
-
     public static BasicResponse buildWhenRegisterSucceed() {
         return BasicResponse.builder()
                 .code(Constants.CODE_REGISTER_SUCCESSFULLY.getCode())
@@ -72,6 +65,20 @@ public class BasicResponse {
         return BasicResponse.builder()
                 .code(Constants.CODE_PASSWORD_RESTORED.getCode())
                 .message(Constants.CODE_PASSWORD_RESTORED.getMessage())
+                .build();
+    }
+
+    public static BasicResponse buildWhenAppCreatedSuccess() {
+        return BasicResponse.builder()
+                .code(Constants.CODE_APP_CREATED.getCode())
+                .message(Constants.CODE_APP_CREATED.getMessage())
+                .build();
+    }
+
+    public static BasicResponse buildWhenAppNameIsTaken() {
+        return BasicResponse.builder()
+                .code(Constants.CODE_APP_NOMBRE_TAKEN.getCode())
+                .message(Constants.CODE_APP_NOMBRE_TAKEN.getMessage())
                 .build();
     }
 }
