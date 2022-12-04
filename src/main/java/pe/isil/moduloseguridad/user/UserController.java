@@ -45,7 +45,7 @@ public class UserController {
             return "redirect:/user/";
         } else {
             model.addAttribute("resp", response);
-            return "./response";
+            return "./responseUser";
         }
     }
 
@@ -57,7 +57,7 @@ public class UserController {
             return "redirect:/user/";
         } else {
             model.addAttribute("resp", response);
-            return "./response";
+            return "./responseUser";
         }
     }
 

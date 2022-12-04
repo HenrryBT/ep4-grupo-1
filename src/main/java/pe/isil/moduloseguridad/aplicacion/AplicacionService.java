@@ -9,8 +9,6 @@ public interface AplicacionService {
 
     BasicResponse updateApp(Aplicacion aplicacion, Long id);
 
-    Aplicacion getUserByName(String nombre);
-
     void deleteApp(Long id);
 
     Aplicacion getAppById(Long id);

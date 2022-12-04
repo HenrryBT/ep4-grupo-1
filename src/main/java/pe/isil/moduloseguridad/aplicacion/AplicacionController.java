@@ -5,20 +5,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pe.isil.moduloseguridad.shared.BasicResponse;
-import pe.isil.moduloseguridad.user.User;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/app")
 public class AplicacionController {
-
     @Autowired
     private AplicacionService aplicacionService;
 
     @GetMapping("/")
     public String index(Model model) {
-
         List<Aplicacion> aplicacion = aplicacionService.getAllApps();
         model.addAttribute("apps", aplicacion);
 
@@ -45,7 +42,7 @@ public class AplicacionController {
             return "redirect:/app/";
         } else {
             model.addAttribute("resp", response);
-            return "./response";
+            return "./responseApp";
         }
     }
 
@@ -57,7 +54,7 @@ public class AplicacionController {
             return "redirect:/app/";
         } else {
             model.addAttribute("resp", response);
-            return "./response";
+            return "./responseApp";
         }
     }
 
@@ -66,5 +63,4 @@ public class AplicacionController {
         aplicacionService.deleteApp(id);
         return "redirect:/app/";
     }
-
 }

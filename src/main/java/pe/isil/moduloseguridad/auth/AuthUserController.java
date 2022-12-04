@@ -35,7 +35,7 @@ public class AuthUserController {
         BasicResponse result = authService.login(user.getEmail(), user.getPassword());
 
         if (result.getCode().equals("200")) {
-            return "redirect:/user/";
+            return "menu/index";
         } else {
             model.addAttribute("resp", result);
             return "auth/login";
