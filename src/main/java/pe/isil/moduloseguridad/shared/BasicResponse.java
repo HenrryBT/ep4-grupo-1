@@ -54,6 +54,13 @@ public class BasicResponse {
                 .build();
     }
 
+    public static BasicResponse buildWhenNameIsTaken() {
+        return BasicResponse.builder()
+                .code(Constants.CODE_NAME_TAKEN.getCode())
+                .message(Constants.CODE_NAME_TAKEN.getMessage())
+                .build();
+    }
+
     public static BasicResponse buildWhenRegisterSucceed() {
         return BasicResponse.builder()
                 .code(Constants.CODE_REGISTER_SUCCESSFULLY.getCode())

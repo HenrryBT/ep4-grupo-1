@@ -10,9 +10,10 @@ public enum Constants {
     CODE_ERROR("500", "Ocurrió un error"),
     CODE_USER_INACTIVATED("401", "Usuario inactivo"),
     CODE_ERROR_CREDENTIALS("403", "Usuario o contraseñas incorrectos"),
-    CODE_EMAIL_TAKEN("510", "Usuario ya está registrado"),
+    CODE_EMAIL_TAKEN("510", "El email ya está registrado"),
     CODE_REGISTER_SUCCESSFULLY("200", "Usuario registrado correctamente"),
-    CODE_PASSWORD_RESTORED("200", "Tu contraseña ha sido actualizada");
+    CODE_PASSWORD_RESTORED("200", "Tu contraseña ha sido actualizada"),
+    CODE_NAME_TAKEN("510", "El email ya está registrado");
 
     @Getter
     private String code;
