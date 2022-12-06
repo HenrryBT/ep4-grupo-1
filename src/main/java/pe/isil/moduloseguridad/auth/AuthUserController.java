@@ -42,6 +42,7 @@ public class AuthUserController {
         }
     }
 
+
     @PostMapping("/auth/register")
     public String register(@ModelAttribute AuthUser user, Model model) {
         BasicResponse result = authService.register(user);

@@ -5,8 +5,30 @@
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- <link href="../static/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <style>
+        .button2 {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+        .text_blue{
+        font-color: blue;
+        }
+        .text_white{
+        color: white;
+        }
+        .box_black {
+	    background: #222;
+        }
+    </style>
 </head>
-<body>
+<body class="box_black">
 <br>
 <div class="container">
     <div th:if="${resp!=null}" class="alert alert-danger" role="alert">
@@ -16,28 +38,32 @@
     <br>
     <form th:action="@{/login}" method="post" th:object="${user}">
         <div class="form-outline mb-4">
-            <label class="form-label" for="email">Email:</label>
-            <input type="email" id="email" name="email" class="form-control"/>
+            <label class="form-label" for="email"> <h4 class="text_white" >Email:</h4></label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Ejemplo@gmail.com"/>
         </div>
         <!-- Password input -->
         <div class="form-outline mb-4">
-            <label class="form-label" for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" class="form-control"/>
+            <label class="form-label" for="password"> <h4 class="text_white" >Contraseña:</h4></label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña"/>
         </div>
 
         <div class="row mb-4">
             <div class="col">
                 <!-- Simple link -->
-                <a th:href="@{/auth/recoverpassword}">Olvidaste tu contraseña?</a>
+                <a class="text_blue" th:href="@{/auth/recoverpassword}">¿Olvidaste tu contraseña?</a>
             </div>
         </div>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">Ingresar</button>
-
+        <!--
+        <button type="submit" class="btn btn-success btn-lg">Ingresar</button> -->
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-secondary">Ingresar</button>
+<br>
+        <br>
         <!-- Register buttons -->
-        <div class="text-center">
-            <p>No estas registrado? <a th:href="@{/auth/register}">Registro</a></p>
+        <div class="text-left">
+            <p class="text_white">¿No estas registrado? <a class="text_blue" th:href="@{/auth/register}">Registro</a></p>
         </div>
     </form>
 </div>

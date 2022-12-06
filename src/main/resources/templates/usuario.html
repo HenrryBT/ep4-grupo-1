@@ -7,8 +7,8 @@
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-<h1 th:if="${name}!=''" th:text="'Bienvenido ' +  ${name}"></h1>
-<h1 th:if="${name}==''"> Usuario no encontrado </h1>
+<h1 style="labelContenido" th:if="${name}!=''" th:text="'Bienvenido ' +  ${name}"></h1>
+<h1 style="labelErrores" th:if="${name}==''"> Usuario no encontrado </h1>
 <br>
 <div class="container">
     <table class="table">
