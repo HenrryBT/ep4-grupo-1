@@ -98,7 +98,7 @@ div.ajax__calendar_container{width: 170px;font-size :10px; }
 	color: red;
 }
 
-.boton-new,.boton {
+.boton-new, .boton {
 	border-color: inherit;
 	border-width: medium;
 	font-family:Verdana;
@@ -108,6 +108,17 @@ div.ajax__calendar_container{width: 170px;font-size :10px; }
 	 background-color:#ccc;
 	  box-shadow: 3px 3px 1px #888888;
     font-weight: 700;
+}
+
+.button2 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 * {
 	 font-family:Verdana;
