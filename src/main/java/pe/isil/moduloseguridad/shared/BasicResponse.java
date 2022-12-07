@@ -47,6 +47,13 @@ public class BasicResponse {
                 .build();
     }
 
+    public static BasicResponse buildWhenEmailNotExist() {
+        return BasicResponse.builder()
+                .code(Constants.CODE_EMAIL_NOT_EXIST.getCode())
+                .message(Constants.CODE_EMAIL_NOT_EXIST.getMessage())
+                .build();
+    }
+
     public static BasicResponse buildWhenEmailIsTaken() {
         return BasicResponse.builder()
                 .code(Constants.CODE_EMAIL_TAKEN.getCode())
