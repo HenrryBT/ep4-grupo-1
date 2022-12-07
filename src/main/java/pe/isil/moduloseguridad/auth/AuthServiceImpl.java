@@ -44,7 +44,7 @@ public class AuthServiceImpl implements AuthService {
         try {
             Optional<AuthUser> userToUpdate = repository.findAuthUserByEmail(email);
 
-            if (userToUpdate.isEmpty()) return BasicResponse.buildWhenEmailPasswordIncorrect();
+            if (userToUpdate.isEmpty()) return BasicResponse.buildWhenEmailNotExist();
             if (!userToUpdate.get().getIsActive()) return BasicResponse.buildWhenIsInactive();
 
             userToUpdate.get().setPassword(password);

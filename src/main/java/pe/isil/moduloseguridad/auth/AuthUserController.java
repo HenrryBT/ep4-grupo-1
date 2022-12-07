@@ -42,7 +42,6 @@ public class AuthUserController {
         }
     }
 
-
     @PostMapping("/auth/register")
     public String register(@ModelAttribute AuthUser user, Model model) {
         BasicResponse result = authService.register(user);
@@ -57,7 +56,14 @@ public class AuthUserController {
     @PostMapping("/auth/recoverpassword")
     private String recoverPassword(@ModelAttribute AuthUser user, Model model) {
         BasicResponse result = authService.recoverPassword(user, user.getEmail(), user.getPassword());
+
         model.addAttribute("resp", result);
-        return "redirect:/login";
+
+        if (result.getCode().equals("200")) {
+            return "redirect:/login";
+        } else {
+            return "auth/recoverpassword";
+        }
+
     }
 }
